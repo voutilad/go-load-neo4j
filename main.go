@@ -93,7 +93,7 @@ func doWork(batch []map[string]interface{}, driver *neo4j.Driver, db string) {
 
 func main() {
 	// Wire up a stream reader
-	records := make(chan Record, 5)
+	records := make(chan Record, 5000)
 	go decode(os.Stdin, records)
 
 	// get config from environment for now
